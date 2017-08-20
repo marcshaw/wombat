@@ -59,7 +59,7 @@ module Wombat
 
           if metadata[:document_format] == :html
             @page = @mechanize.public_send(_method, *args) unless @page
-            parser = @page.parser         # Nokogiri::HTML::Document
+            parser = metadata[:parsed_html] || @page.parser         # Nokogiri::HTML::Document
             parser.mechanize_page = @page # Mechanize::Page
             parser.headers = @page.header
           else

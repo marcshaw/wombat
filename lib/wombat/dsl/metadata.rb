@@ -35,6 +35,10 @@ module Wombat
       def page(page)
         self[:page] = page
       end
+
+      def parsed_html(parsed_html)
+        self[:parsed_html] = parsed_html
+      end
     end
   end
 end
